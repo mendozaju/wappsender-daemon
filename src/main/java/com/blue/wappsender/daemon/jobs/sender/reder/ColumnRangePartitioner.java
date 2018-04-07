@@ -12,7 +12,7 @@ import org.springframework.batch.item.ExecutionContext;
 import org.springframework.jdbc.core.JdbcOperations;
 import org.springframework.jdbc.core.JdbcTemplate;
 
-import com.blue.wappsender.daemon.sender.SenderProcessor;
+import com.blue.wappsender.daemon.jobs.sender.procesor.SenderProcessor;
 /**
  * @author Michael Minella
  */

@@ -1,4 +1,4 @@
-package com.blue.wappsender.daemon.sender;
+package com.blue.wappsender.daemon.jobs.sender.procesor;
 
 import javax.sql.DataSource;
 
@@ -29,11 +29,14 @@ public class SenderProcessor implements ItemProcessor<WhatSappMessageDTO, WhatSa
 	@Override
 	public WhatSappMessageDTO process(WhatSappMessageDTO message) throws Exception {
 		
-		log.info("Se procesa el mensa y se envia WHATSAPP con id" + message.getId());
 		
-		Integer resutl = jdbcTemplate.update("update blue_wapp.messages set thread = ?, intent = ? where id = ? ", "PROCECED", message.getIntnet() + 1,   message.getId());
-		log.info("Resultado ->" + resutl);
 		
+		log.info("El thread :[{}] procesa el mensaje con id: [{}]",Thread.currentThread().getName(), message.getId());
+		
+		Integer resutl = jdbcTemplate.update("update blue_wapp.messages set thread = ?, intent = ? where id = ? ", Thread.currentThread().getName(), message.getIntent() + 1,   message.getId());
+		//log.info("Resultado ->" + resutl);
+		
+		//Thread.sleep(10000);
 		
 		return message;
 	}

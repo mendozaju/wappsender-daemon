@@ -1,4 +1,4 @@
-package com.blue.wappsender.daemon.sender;
+package com.blue.wappsender.daemon.jobs.sender.scheduler;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -28,7 +28,7 @@ public class Scheduler {
 	@Autowired
 	private Job job;
 	
-	@Scheduled(cron = "*/60 * * * * *")
+	@Scheduled(cron = "* */30 * * * *")
 	public void myScheduler() throws JobExecutionAlreadyRunningException, JobRestartException, JobInstanceAlreadyCompleteException, JobParametersInvalidException {
 		
 		log.info("Se ejecuta el JOB para envios de mensajes");

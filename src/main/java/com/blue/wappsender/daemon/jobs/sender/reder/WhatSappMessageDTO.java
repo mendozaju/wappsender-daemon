@@ -11,7 +11,7 @@ public class WhatSappMessageDTO {
 	private int id;
 	private String number;
 	private String text;
-	private int intnet;
+	private int intent;
 
 	public int getId() {
 		return id;
@@ -37,12 +37,13 @@ public class WhatSappMessageDTO {
 		this.text = text;
 	}
 
-	public int getIntnet() {
-		return intnet;
+	public int getIntent() {
+		return intent;
 	}
 
-	public void setIntnet(int intnet) {
-		this.intnet = intnet;
+	public void setIntent(int intent) {
+		this.intent = intent;
 	}
+
 
 }

@@ -1,4 +1,4 @@
-package com.blue.wappsender.daemon.sender;
+package com.blue.wappsender.daemon.jobs.sender.writer;
 
 import java.util.List;
 
