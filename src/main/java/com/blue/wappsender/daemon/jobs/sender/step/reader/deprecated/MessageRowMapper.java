@@ -1,4 +1,4 @@
-package com.blue.wappsender.daemon.jobs.sender;
+package com.blue.wappsender.daemon.jobs.sender.step.reader.deprecated;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -6,8 +6,6 @@ import java.sql.SQLException;
 import javax.swing.tree.TreePath;
 
 import org.springframework.jdbc.core.RowMapper;
-
-import com.blue.wappsender.daemon.jobs.sender.reder.WhatSappMessageDTO;
 
 public class MessageRowMapper implements RowMapper {
 

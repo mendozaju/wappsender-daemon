@@ -26,7 +26,7 @@ public class DataSourceConfig {
 				.build();
 		//TODO: Buscar una manera mejor de confiruar la cantida maxima de conexiones
 		org.apache.tomcat.jdbc.pool.DataSource ds = (org.apache.tomcat.jdbc.pool.DataSource) dataSource;
-		ds.setMaxActive(5);
+		ds.setMaxActive(3);
 		return ds;
 	}
 	

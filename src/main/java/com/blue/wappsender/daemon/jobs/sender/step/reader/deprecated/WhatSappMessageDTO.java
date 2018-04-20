@@ -1,4 +1,4 @@
-package com.blue.wappsender.daemon.jobs.sender.reder;
+package com.blue.wappsender.daemon.jobs.sender.step.reader.deprecated;
 
 /**
  * Clase que representa un mensaje de whatsapp de la bbdd
