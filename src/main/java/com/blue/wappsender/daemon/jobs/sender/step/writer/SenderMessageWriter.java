@@ -44,6 +44,7 @@ public class SenderMessageWriter implements ItemWriter<Message> {
 	 */
 	private void sendMessage(Message aMessage) {
 		// TODO tengo que ver de obtener las credeciales de envio para el cliente y crear el cliente pare realizar el envio.
+		//Tambien hay que controlar la cantidad de mensajes que se enviaron por usuarios
 		
 	}
 

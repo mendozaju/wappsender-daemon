@@ -9,11 +9,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.scheduling.annotation.EnableScheduling;
 
-import com.blue.wappsender.daemon.jobs.messages.step.listener.SenderListener;
+import com.blue.wappsender.daemon.jobs.common.listener.JobFinalizedListener;
 
-//@Configuration
+@Configuration
 //@EnableBatchProcessing
+@EnableScheduling
 public class JobBuildMessagesConfig {
 
 	@Autowired
@@ -33,8 +35,8 @@ public class JobBuildMessagesConfig {
 				.build();
 	}
 	
-	public SenderListener getSenderListener() {
-		return new SenderListener();
+	public JobFinalizedListener getSenderListener() {
+		return new JobFinalizedListener();
 	}
 	
 	/*

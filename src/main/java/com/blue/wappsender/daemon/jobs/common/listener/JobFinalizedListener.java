@@ -1,4 +1,4 @@
-package com.blue.wappsender.daemon.jobs.messages.step.listener;
+package com.blue.wappsender.daemon.jobs.common.listener;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -11,14 +11,14 @@ import org.springframework.stereotype.Component;
  * @author jmendoza
  *
  */
-public class SenderListener extends JobExecutionListenerSupport {
+public class JobFinalizedListener extends JobExecutionListenerSupport {
 	
-	private static final Logger log = LoggerFactory.getLogger(SenderListener.class);
+	private static final Logger log = LoggerFactory.getLogger(JobFinalizedListener.class);
 	
 	@Override
 	public void afterJob(JobExecution jobExecution) {
 		super.afterJob(jobExecution);		
-		log.info("Listener de finalizacion de job - Status: {}",jobExecution.getStatus());
+		log.info("------ FINALIZA EL JOB [{}] CON STATUS: {} ------",jobExecution.getJobId(), jobExecution.getStatus());
 	}
 
 }

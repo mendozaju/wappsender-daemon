@@ -2,7 +2,6 @@ package com.blue.wappsender.daemon.jobs.sender;
 
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;
-import org.springframework.batch.core.configuration.annotation.EnableBatchProcessing;
 import org.springframework.batch.core.configuration.annotation.JobBuilderFactory;
 import org.springframework.batch.core.launch.support.RunIdIncrementer;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +9,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import com.blue.wappsender.daemon.jobs.messages.step.listener.SenderListener;
+import com.blue.wappsender.daemon.jobs.common.listener.JobFinalizedListener;
 
 /**
  * Configuracion del JOB para el envio de los mensajes
@@ -18,7 +17,7 @@ import com.blue.wappsender.daemon.jobs.messages.step.listener.SenderListener;
  *
  */
 @Configuration
-@EnableBatchProcessing
+//@EnableBatchProcessing
 public class JobSenderConfig {
 	
 	@Autowired
@@ -38,7 +37,7 @@ public class JobSenderConfig {
 				.build();
 	}
 
-	public SenderListener getSenderListener() {
-		return new SenderListener();
+	public JobFinalizedListener getSenderListener() {
+		return new JobFinalizedListener();
 	}
 }
